@@ -17,14 +17,22 @@ function addGenre(){
         card.classList.add('card')
         column.append(card)
 
+        if(level === 'easy'){
+            card.innerHTML = 100
+        }else if(level === 'medium'){
+            card.innerHTML = 200
+        }else {
+            card.innerHTML = 300
+        }
+
         fetch(`https://opentdb.com/api.php?amount=1&category=11&difficulty=${level}&type=boolean`)
             .then(response => response.json())
             .then(data => {
                 console.log(data)
                 card.setAttribute('data-question',data.results[0].question)
                 card.setAttribute('data-answer',data.results[0].correct_answer)
+                card.setAttribute('data-value',card.getInnerHTML())
             })
-            
     })
 }
 
