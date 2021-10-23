@@ -30,3 +30,7 @@ body{
 #game {
     display: flex;
 }
+
+.correc-answer{
+    background-color: rgb(100, 129, 42);
+}

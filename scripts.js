@@ -1,7 +1,8 @@
 const game = document.getElementById('game')
 const scoreDisplay = document.getElementById('score')
-console.log(game,score)
+let score = 00
 
+scoreDisplay.innerHTML = score
 
 const genres = [
     {
@@ -80,8 +81,12 @@ function flipCard(){
 function getResult(){
     const cardOfButton = this.parentElement
     if(cardOfButton.getAttribute('data-answer') === this.innerHTML){
-            console.log('Right answer')
+            score = score+ parseInt(cardOfButton.getAttribute('data-value'))
+            console.log(score)
+            scoreDisplay.innerHTML = score
+            cardOfButton.classList.add('correc-answer')
         }
     }
 
 addGenre(genres[0])
+
