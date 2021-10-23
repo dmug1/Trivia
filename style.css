@@ -26,3 +26,7 @@ body{
     margin: 10px;
     border:solid rgb(174, 178, 235) 2px;
 }
+
+#game {
+    display: flex;
+}

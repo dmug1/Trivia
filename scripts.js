@@ -55,9 +55,12 @@ function addGenre(genre){
     })
 }
 
+genres.forEach(genre => addGenre(genre)) //create bloks fr each genre
+
 function flipCard(){
     console.log('click')
 }
+
 
 
 addGenre(genres[0])
