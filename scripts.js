@@ -51,8 +51,8 @@ function addGenre(genre){
                 card.setAttribute('data-answer',data.results[0].correct_answer)
                 card.setAttribute('data-value',card.getInnerHTML())
             })
+            .then(done => card.addEventListener('click', flipCard)) 
         
-        card.addEventListener('click', flipCard)
     })
 }
 
