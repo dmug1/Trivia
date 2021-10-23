@@ -59,6 +59,15 @@ genres.forEach(genre => addGenre(genre)) //create bloks fr each genre
 
 function flipCard(){
     console.log('click')
+    const textDisplay = document.createElement('div')
+    const trueButton = document.createElement('button')
+    const falseButton = document.createElement('button')
+
+    trueButton.innerHTML = 'True'
+    falseButton.innerHTML = 'False'
+
+    textDisplay.innerHTML = this.getAttribute('data-question')
+    this.append(textDisplay,trueButton,falseButton)
 }
 
 
