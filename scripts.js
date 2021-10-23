@@ -79,9 +79,17 @@ function flipCard(){
 }
 
 function getResult(){
+
+    
+    const allCards = Array.from(document.querySelectorAll('.card'))
+    allCards.forEach(card => card.addEventListener('click', flipCard))
+
     const cardOfButton = this.parentElement
+    
+
+
     if(cardOfButton.getAttribute('data-answer') === this.innerHTML){
-            score = score+ parseInt(cardOfButton.getAttribute('data-value'))
+            score = score + parseInt(cardOfButton.getAttribute('data-value'))
             console.log(score)
             scoreDisplay.innerHTML = score
             cardOfButton.classList.add('correc-answer')
@@ -100,6 +108,8 @@ function getResult(){
                 cardOfButton.innerHTML = 0
             },1000)
         }
+
+        cardOfButton.removeEventListener('click',flipCard)
     }
 
 addGenre(genres[0])
