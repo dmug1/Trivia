@@ -68,6 +68,9 @@ function flipCard(){
 
     textDisplay.innerHTML = this.getAttribute('data-question')
     this.append(textDisplay,trueButton,falseButton)
+
+    const allCards = Array.from(document.querySelectorAll('.card'))
+    allCards.forEach(card => card.removeEventListener('click',flipCard))
 }
 
 
