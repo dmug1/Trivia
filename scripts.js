@@ -66,6 +66,10 @@ function flipCard(){
     trueButton.innerHTML = 'True'
     falseButton.innerHTML = 'False'
 
+    trueButton.addEventListener('click',getResult)
+    falseButton.addEventListener('click',getResult)
+
+
     textDisplay.innerHTML = this.getAttribute('data-question')
     this.append(textDisplay,trueButton,falseButton)
 
@@ -73,6 +77,11 @@ function flipCard(){
     allCards.forEach(card => card.removeEventListener('click',flipCard))
 }
 
-
+function getResult(){
+    const cardOfButton = this.parentElement
+    if(cardOfButton.getAttribute('data-answer') === this.innerHTML){
+            console.log('Right answer')
+        }
+    }
 
 addGenre(genres[0])
