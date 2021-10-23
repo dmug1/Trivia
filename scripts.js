@@ -91,6 +91,14 @@ function getResult(){
                 }
                 cardOfButton.innerHTML = cardOfButton.getAttribute('data-value')
             },1000)
+        } else{
+            cardOfButton.classList.add('wrong-answer')
+            setTimeout(()=>{
+                while(cardOfButton.firstChild){
+                    cardOfButton.removeChild(cardOfButton.lastChild)
+                }
+                cardOfButton.innerHTML = 0
+            },1000)
         }
     }
 
