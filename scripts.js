@@ -85,6 +85,12 @@ function getResult(){
             console.log(score)
             scoreDisplay.innerHTML = score
             cardOfButton.classList.add('correc-answer')
+            setTimeout(()=>{
+                while(cardOfButton.firstChild){
+                    cardOfButton.removeChild(cardOfButton.lastChild)
+                }
+                cardOfButton.innerHTML = cardOfButton.getAttribute('data-value')
+            },1000)
         }
     }
 
